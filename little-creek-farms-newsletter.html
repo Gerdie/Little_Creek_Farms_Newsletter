@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>What's cookin', good lookin'?</title>
+	<style type="text/css">
+		/* Client-specific Styles */
+		#outlook a {padding:0;}
+		body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+		.ExternalClass {width:100%;}
+		.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} 
+		#backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important; background-color: #FFFFFF;}
+		/* End reset */
+		/* Some sensible defaults for images
+		1. "-ms-interpolation-mode: bicubic" works to help ie properly resize images in IE. (if you are resizing them using the width and height attributes)
+		2. "border:none" removes border when linking images.
+		3. Updated the common Gmail/Hotmail image display fix: Gmail and Hotmail unwantedly adds in an extra space below images when using non IE browsers. You may not always want all of your images to be block elements. Apply the "image_fix" class to any image you need to fix.
+		Bring inline: Yes.
+		*/
+		img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
+		a img {border:none;}
+		.image_fix {display:block;}
+		p {margin: 1em 0;}
+		h1, h2, h3, h4, h5, h6 {color: black !important;}
+		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
+		h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
+			color: red !important; /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
+		 }
+		h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+			color: purple !important; /* Preferably not the same color as the normal header link color. There is limited support for psuedo classes in email clients, this was added just for good measure. */
+		}
+		table td {border-collapse: collapse;}
+		table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+		a {color: orange;}
+		/* Or to go the gold star route...
+		a:link { color: orange; }
+		a:visited { color: blue; }
+		a:hover { color: green; }
+		*/
+		/***************************************************
+		****************************************************
+		MOBILE TARGETING
+		Use @media queries with care.  You should not bring these styles inline -- so it's recommended to apply them AFTER you bring the other stlying inline.
+		Note: test carefully with Yahoo.
+		Note 2: Don't bring anything below this line inline.
+		****************************************************
+		***************************************************/
+		/* NOTE: To properly use @media queries and play nice with yahoo mail, use attribute selectors in place of class, id declarations.
+		table[class=classname]
+		Read more: http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-yahoo-mail-mobile-email/
+		*/
+		@media only screen and (max-device-width: 480px) {
+			/* A nice and clean way to target phone numbers you want clickable and avoid a mobile phone from linking other numbers that look like, but are not phone numbers.  Use these two blocks of code to "unstyle" any numbers that may be linked.  The second block gives you a class to apply with a span tag to the numbers you would like linked and styled.
+			Inspired by Campaign Monitor's article on using phone numbers in email: http://www.campaignmonitor.com/blog/post/3571/using-phone-numbers-in-html-email/.
+			Step 1 (Step 2: line 224)
+			*/
+			a[href^="tel"], a[href^="sms"] {
+						text-decoration: none;
+						color: black; /* or whatever your want */
+						pointer-events: none;
+						cursor: default;
+					}
+			.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+						text-decoration: default;
+						color: orange !important; /* or whatever your want */
+						pointer-events: auto;
+						cursor: default;
+					}
+		}
+		/* More Specific Targeting */
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+			/* You guessed it, ipad (tablets, smaller screens, etc) */
+			/* Step 1a: Repeating for the iPad */
+			a[href^="tel"], a[href^="sms"] {
+						text-decoration: none;
+						color: blue; /* or whatever your want */
+						pointer-events: none;
+						cursor: default;
+					}
+			.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+						text-decoration: default;
+						color: orange !important;
+						pointer-events: auto;
+						cursor: default;
+					}
+		}
+		@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+			/* Put your iPhone 4g styles in here */
+		}
+		/* Following Android targeting from:
+		http://developer.android.com/guide/webapps/targeting.html
+		http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-devices/  */
+		@media only screen and (-webkit-device-pixel-ratio:.75){
+			/* Put CSS for low density (ldpi) Android layouts in here */
+		}
+		@media only screen and (-webkit-device-pixel-ratio:1){
+			/* Put CSS for medium density (mdpi) Android layouts in here */
+		}
+		@media only screen and (-webkit-device-pixel-ratio:1.5){
+			/* Put CSS for high density (hdpi) Android layouts in here */
+		}
+		/* end Android targeting */
+		@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+	</style>
+
+	<!-- Targeting Windows Mobile -->
+	<!--[if IEMobile 7]>
+	<style type="text/css">
+	</style>
+	<![endif]-->
+
+	<!-- ***********************************************
+	****************************************************
+	END MOBILE TARGETING
+	****************************************************
+	************************************************ -->
+
+	<!--[if gte mso 9]>
+	<style>
+		/* Target Outlook 2007 and 2010 */
+	</style>
+	<![endif]-->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570ac0554f533891"></script>
+</head>
+<body>
+	<!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
+	<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="background-color: #fa613e;">
+	<tr>
+		<td>
+		<!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
+		<table cellpadding="0" cellspacing="0" border="0" align="center" width:"600" style="background-color:#ffffff; margin-top:10px; margin-bottom:10px;">
+			<tr>
+            	<td width="600" valign="top" align="center"><p style="font-family: Garamond,Baskerville,'Baskerville Old Face','Hoefler Text','Times New Roman',serif; font-size: 36px; margin-bottom:15px;">Little Creek Farms CSA</p></td>
+            </tr>
+            <tr>
+            	<td width="600" valign="top" align="center"><!-- Go to www.addthis.com/dashboard to generate a new set of sharing buttons -->
+<a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=http%3A%2F%2Fwww.littlecreekfarms.com&pubid=ra-570ac0554f533891&ct=1&title=Connect%20with%20us%20on%20social%20media!&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/16x16/facebook.png" border="0" alt="Facebook"/></a>
+<a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=http%3A%2F%2Fwww.littlecreekfarms.com&pubid=ra-570ac0554f533891&ct=1&title=Connect%20with%20us%20on%20social%20media!&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/16x16/twitter.png" border="0" alt="Twitter"/></a>
+<a href="https://api.addthis.com/oexchange/0.8/forward/pinterest_share/offer?url=http%3A%2F%2Fwww.littlecreekfarms.com&pubid=ra-570ac0554f533891&ct=1&title=Connect%20with%20us%20on%20social%20media!&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/16x16/pinterest_share.png" border="0" alt="Pinterest"/></a>
+<a href="https://api.addthis.com/oexchange/0.8/forward/linkedin/offer?url=http%3A%2F%2Fwww.littlecreekfarms.com&pubid=ra-570ac0554f533891&ct=1&title=Connect%20with%20us%20on%20social%20media!&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/16x16/linkedin.png" border="0" alt="LinkedIn"/></a>
+</td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" align="center"><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/jamie-hamel-smith-1200-v2.jpg" alt="Your CSA box is ready!" title="Your CSA box is ready!" width="600px" /></td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" align="center" style="font-family: 'Shadows Into Light', cursive; font-size:30px; padding-bottom:10px;">Week of May 5, 2016</td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 18px; padding-left: 30px;"><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/carrot-orange-pointy-100.png" alt="3" width="45px" style="display:inline-block;" /><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/carrot-orange-pointy-100.png" width="45px" style="display:inline-block;" /><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/carrot-orange-pointy-100.png" width="45px" style="display:inline-block;" /><p style="display:inline; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; vertical-align:super;">carrots</p></td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" style="font-size:18px; padding-left: 30px;"><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/onion-half-purple-100.png" alt="2" width="50px" style="display:inline-block;" /><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/onion-half-purple-100.png" width="50px" style="display:inline-block;" /><p style="display:inline; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; vertical-align:super;">  spanish onions</p></td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" style="font-size:18px; padding-left: 30px;"><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/tomato-red-100.png" alt="2" width="50px" style="display:inline-block;" /><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/tomato-red-100.png" width="50px" style="display:inline-block;" /><p style="display:inline; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; vertical-align:super;">  heirloom tomatoes</p></td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" style="font-size:18px; padding-left: 30px;"><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/lettuce-green-100.png" alt="1" height="40px" style="display:inline-block;" /><p style="display:inline; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;  vertical-align:super;">  iceberg lettuce</p></td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" style="font-size:18px; padding-left: 30px;"><img class="image_fix" src="http://biglittlem.com/wp-content/uploads/2016/04/mint-green-100.png" alt="1" height="40px" style="display:inline-block;" /><p style="display:inline; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; vertical-align:super;"> mint sprig</p></td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" align="center" style="font-family: 'Shadows Into Light', cursive; font-size:30px; padding-bottom:10px; padding-top: 10px;">Pickup Location</td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" align="center"><p style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;">425 E St NW, Washington DC, 20045</p></td>
+			</tr>
+            <tr>
+            	<td valign="top" align="center" style="padding-bottom:10px;">
+                <table>
+                <tr>
+                <td></td>
+                <td>
+                <a href="http://www.littlecreekfarms.com/5/5/16/recipes" style="text-decoration:none; color: #FFFFFF;"><div width="50px" height="20px" style="background-color:#1c520b; color: #FFFFFF; padding:10px; font-family: Garamond,Baskerville,'Baskerville Old Face','Hoefler Text','Times New Roman',serif; letter-spacing:1px;">GET RECIPES</div></a>
+                </td>
+                <td>
+                </td>
+                </tr>
+                </table>
+                </td>
+			</tr>
+            <tr>
+            	<td width="100%" valign="top" align="center"><p style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; color:#777777; font-size:10px;"><a href="http://www.littlecreekfarms.com/feedback" style="text-decoration:none; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; color:#777777;">Feedback</a> &bull; <a href="http://www.littlecreekfarms.com/optout" style="text-decoration:none; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; color:#777777;">Unsubscribe</a></p></td>
+			</tr>
+		</table>
+
+		<!-- End example table -->
+
+		<!-- Yahoo Link color fix updated: Simply bring your link styling inline.
+		<a href="http://htmlemailboilerplate.com" target ="_blank" title="Styling Links" style="color: orange; text-decoration: none;">Coloring Links appropriately</a>-->
+
+		<!-- Gmail/Hotmail image display fix: Gmail and Hotmail unwantedly adds in an extra space below images when using non IE browsers.  This can be especially painful when you putting images on top of each other or putting back together an image you spliced for formatting reasons.  Either way, you can add the 'image_fix' class to remove that space below the image.  Make sure to set alignment (don't use float) on your images if you are placing them inline with text.
+		<img class="image_fix" src="full path to image" alt="Your alt text" title="Your title text" width="x" height="x" /> -->
+		</td>
+	</tr>
+	</table>
+	<!-- End of wrapper table -->
+</body>
+</html>
