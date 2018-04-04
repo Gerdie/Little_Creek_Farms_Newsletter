@@ -1,16 +1,16 @@
 # Little Creek Farms Newsletter
 Responsive HTML email newsletter for Little Creek Farms's CSA boxes.
 
-##Contents
+## Contents
 - Tech Stack
 - Credits
 - About Me
 
-##Tech Stack
+## Tech Stack
 - HTML
 - CSS
 
-##Credits
+## Credits
 
 Graphics edited for color. Originally from:
 
@@ -20,7 +20,7 @@ Graphics edited for color. Originally from:
 - Cabbage by Jose Eduardo Ayala from the Noun Project
 - Mint by Botho Willer from the Noun Project
 
-##About Me
+## About Me
 
 This email newsletter was developed by Maria Moy. Find her on [LinkedIn]
 (http://www.linkedin.com/in/maria-k-moy) or [GitHub]
